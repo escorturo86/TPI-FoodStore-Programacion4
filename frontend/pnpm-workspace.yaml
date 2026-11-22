@@ -1,0 +1,5 @@
+minimumReleaseAgeExclude:
+  - '@tanstack/query-core@5.108.1'
+  - '@tanstack/react-query@5.108.1'
+allowBuilds:
+  esbuild: true

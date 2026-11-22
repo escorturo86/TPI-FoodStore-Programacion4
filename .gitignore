@@ -1,0 +1,22 @@
+# Configuración local y credenciales
+.env
+.env.*
+!.env.example
+
+# Entornos y archivos generados
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+*.sqlite*
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+*.log
+.vscode/
+.idea/
