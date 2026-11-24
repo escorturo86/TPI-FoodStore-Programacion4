@@ -3,8 +3,9 @@ import { resolve } from 'node:path'
 
 export default function limpiar() {
   const backend = resolve(process.cwd(), '../backend')
-  const control = resolve(process.cwd(), '../../FOODSTORE_CONTROL/QA/e2e_db.py')
-  execFileSync(resolve(backend, '.venv/Scripts/python.exe'), [control, 'limpiar'], {
+  const script = resolve(process.cwd(), 'e2e/e2e_db.py')
+  const python = resolve(backend, process.platform === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python')
+  execFileSync(python, [script, 'limpiar'], {
     cwd: backend,
     stdio: 'inherit',
     env: { ...process.env, DATABASE_URL: 'postgresql://foodstore@localhost:5433/foodstore_test' },

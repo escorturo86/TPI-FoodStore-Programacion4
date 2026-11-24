@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 const frontend = dirname(fileURLToPath(import.meta.url))
 const backend = resolve(frontend, '../backend')
+const python = resolve(backend, process.platform === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python')
 const databaseUrl = 'postgresql://foodstore@localhost:5433/foodstore_test'
 
 export default defineConfig({
@@ -22,7 +23,7 @@ export default defineConfig({
   globalTeardown: './e2e/limpiar.ts',
   webServer: [
     {
-      command: `"${resolve(backend, '.venv/Scripts/python.exe')}" -m uvicorn app.main:app --host localhost --port 8002`,
+      command: `"${python}" -m uvicorn app.main:app --host localhost --port 8002`,
       cwd: backend,
       url: 'http://localhost:8002/api/v1/salud',
       reuseExistingServer: false,
