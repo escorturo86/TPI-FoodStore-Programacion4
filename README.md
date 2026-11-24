@@ -86,11 +86,9 @@ python -m pip check
 
 Con el servidor iniciado, abrir `/docs` y comprobar `GET /api/v1/salud`. Desde `frontend/`, `pnpm build` verifica TypeScript y genera la versión de producción.
 
-El repositorio de desarrollo también contiene controles automatizados con PostgreSQL y Playwright. La suite de Playwright se ejecuta desde `frontend/` con `pnpm exec playwright test`; usa exclusivamente una base local llamada `foodstore_test` en el puerto 5433 y requiere Chromium de Playwright (`pnpm exec playwright install chromium`). La configuración de pruebas prepara y limpia datos en esa base: **no ejecutarla contra la base de desarrollo**. Los controles de PostgreSQL y HTTP adicionales están en `FOODSTORE_CONTROL/QA/`, fuera del paquete académico de revisión.
+El repositorio también contiene pruebas Playwright. Se ejecutan desde `frontend/` con `pnpm exec playwright test`; usan exclusivamente una base local llamada `foodstore_test` en el puerto 5433 y requieren Chromium de Playwright (`pnpm exec playwright install chromium`). La configuración prepara y limpia datos en esa base: **no ejecutarlas contra la base de desarrollo**.
 
 ## Enlaces de la entrega
 
-- Repositorio público de GitHub: [TPI-FoodStore-Programacion4](https://github.com/escorturo86/TPI-FoodStore-Programacion4) (publicación del código pendiente de autorización).
-- Video público de demostración (10 a 15 minutos): **pendiente de grabación y URL real**.
-
-Esta versión es de revisión. El enlace del video se incorporará antes de generar y aprobar el paquete definitivo de entrega.
+- Repositorio público de GitHub: [TPI-FoodStore-Programacion4](https://github.com/escorturo86/TPI-FoodStore-Programacion4).
+- Video público de demostración: [Trabajo Práctico Integrador - Food Store](https://youtu.be/gJ1dk8JwfVk).
